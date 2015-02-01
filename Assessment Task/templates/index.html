@@ -1,0 +1,17 @@
+{% extends "base/base.html" %}  <!--Use base.html as template for website -->
+
+{% block title %}Home{% endblock title %}  <!--override the template title -->
+
+{% block header %}Here are the users in our database:{% endblock header %}<!-- override the template header-->
+
+{% block back %}{% endblock back %}<!-- Omit the "back" button from the home page because there is nothing to go back to-->
+
+{% block user_info %}  
+	{% if users %}  <!-- check if users exist on the database, if they do, print them in order-->
+		<ul class="user-list">
+			{% for user in users %}
+				<li>{{ user }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endblock user_info %}

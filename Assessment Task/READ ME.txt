@@ -1,0 +1,50 @@
+Follow these steps to run the project:
+
+1) Ensure that if you are running this locally, you have PostgrSQL downloaded and installed on your machine.
+2) Run 'Autostart.bat,' if for some reason that doesn't work, run 'db_create.sql' with PostgrSQL
+3) Enter the details as they pertain to your server, e.g.
+
+	Server: localhost
+	Database: postgres
+	Username: root
+[OK]
+	Password: password
+[OK]
+
+4) Execute the SQL query that appears in the window (located in 'db_create.sql' if a window does not appear automatically)
+
+
+-------Batch file should take over from here-------
+
+
+5) In command prompt, change directory (cd) into the folder containing 'manage.py'
+6) Run the following in the CMD:
+
+python manage.py runserver
+
+7) Redo step 5 and run the following in a new CMD:
+
+python manage.py migrate
+python manage.py syncdb
+
+8) Navigate to 127.0.0.1:8000 or 127.0.0.1:5432 in your browser to view the website
+
+9) Navigate to 127.0.0.1:8000/admin or 127.0.0.1:5432/admin and log-in using the superuser information you set earlier
+
+10) Navigate to 'Users' in the menu and click on 'Add'
+
+11) Follow the prompt to add users (they will then appear listed on the homescreen)
+
+
+-------The following applies mostly if you run into any errors-------
+
+
+
+12) If you were unsuccessful with running 'Autostart.bat,' then open the command prompt, type "echo %path%" to ensure the PATH variable has the following directories attached:
+
+C:\Python34;C:\Python34\Scripts
+
+13) If it does not, then in command prompt, run the following code:
+
+set PATH=%path%;C:\Python34;C:\Python34\Scripts
+14) If those directories don't apply, then modify them as needed to fit your filesystem
